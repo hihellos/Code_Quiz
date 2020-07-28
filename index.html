@@ -33,9 +33,25 @@
 
     <div class="container">
       <div id="timer-container" class="hide">
-        <div id="timer-countdown"></div>
+        <div id="timer-countdown">
+            <span id="count">90</span>
+        </div>
       </div>
     </div>
+
+    <div class="container mt-4">
+        <div id="welcome-container" class="hide">
+          <h1 id="welcome">Quiz(time)!</h1>
+          <div class="welcome-text">
+            <p>Can you answer all the questions before time runs out? How many can you get right? Find out! Try to get them all, but remember, an incorrect answer will take 10 seconds off your remaining time. Stay quick - its Quiz(time)!</p>
+            <div id="start-button">
+                <button id="startTime">START</button>
+            </div>
+          </div>
+        </div>
+        <div class="controls"></div>
+      </div>
+  
     <div class="container">
       <div id="question-container" class="hide">
         <div id="question">Question</div>

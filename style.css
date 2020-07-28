@@ -3,11 +3,11 @@
 
 }
 
-#question {
+#question, #welcome {
     font-family: 'Libre Baskerville', serif;
 
 }
 
-.btn {
+.btn, .welcome-text {
     font-family: 'Lato', sans-serif;
 }
