@@ -118,13 +118,15 @@ $(document).ready(function() {
     var currentQuestion = 0
 
     $("#answer-buttons").on("click", function() {
-
+    
         if (questions[currentQuestion].choices[i] == question[currentQuestion].answer) {
             score++
         }
-        console.log(score);
+
+        showNextQuestion();
     });
 
+    console.log(score);
     // WHEN I answer a question incorrectly
     // THEN time is subtracted from the clock
 
@@ -135,6 +137,11 @@ $(document).ready(function() {
 
     // WHEN all questions are answered or the timer reaches 0
     // THEN the game is over
+    if (questionsRemaining === 0) {
+        gameOver();
+    }
+
+
 
     // WHEN the game is over
     // THEN I can save my initials and score
