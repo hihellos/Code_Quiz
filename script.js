@@ -65,10 +65,33 @@
 
     // GIVEN I am taking a code quiz
     // WHEN I click the start button
-    $("#start-time").on("click", function() {
-        alert("I've been clicked!");
-    });
     // THEN a timer starts and I am presented with a question
+    var timeRemaining = 0; 
+
+    function startTimer() {
+        timeRemaining = 60;
+        $("#count").text(timeRemaining);
+
+        countdown = setInterval(function () {
+            timeRemaining--;
+            $("#count").text(timeRemaining);
+
+            if (timeRemaining <= 0) {
+                clearInterval(countdown);
+                gameOver();
+            }
+        }, 1000);
+    }
+    
+    console.log(timeRemaining);
+    
+    $("#start-time").on("click", function() {
+        $("#welcome-container").hide();
+        $("#timer-container").show();
+        $("#question-container").show();
+
+        startTimer();
+    });
     // WHEN I answer a question
     // THEN I am presented with another question
     // WHEN I answer a question incorrectly
