@@ -116,10 +116,10 @@ $(document).ready(function() {
         var xxx = this.attribute
         // set a variable for each button, so we can give it an attr then get value out of button clicked, match value with user answer to see if right or wrong
 
-        $("").on("click", fucntion () {
-            
-        })
-    })
+        $("").on("click", function () {
+
+        });
+    });
 
     $("#start-time").on("click", function() {
         alert("I hope you like F*R*I*E*N*D*S!")
