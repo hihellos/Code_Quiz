@@ -1,4 +1,4 @@
-// $(document).ready(function() {
+$(document).ready(function() {
 // Game Questions
     var gameQuestions = [
         {
@@ -83,52 +83,64 @@
         }, 1000);
     }
     
-    console.log(timeRemaining);
+    console.log(gameQuestions.length);
+    console.log(JSON.stringify(gameQuestions[0].answer));
+    console.log(gameQuestions[0].choices.length);
     
+    function showQuestion() {
+        $("#question-box").html(gameQuestions[0].question)
+
+        for (i = 0; i < gameQuestions[0].choices.length; i++) {
+            var answerBtn = $("<button>");
+            
+            answerBtn.addClass("answer-button");
+            answerBtn.attr("data-answer", gameQuestions[0].choices[i]);
+            answerBtn.text(gameQuestions[0].choices[i]);
+            $("#answer-buttons").append(answerBtn);
+            
+        };
+    }
+
     $("#start-time").on("click", function() {
         $("#welcome-container").hide();
         $("#timer-container").show();
         $("#question-container").show();
 
         startTimer();
+        showQuestion();
     });
+
     // WHEN I answer a question
     // THEN I am presented with another question
+
+    // function next() {
+    //     currentQuestion++;
+        
+    //     if (currentQuestion > gameQuestions.length-1) {
+    //         endGame;
+    //     }
+
+    //     var
+    // }
+
     // WHEN I answer a question incorrectly
     // THEN time is subtracted from the clock
+
+    // function wrongAnswer() {
+    //     timeRemaining -= 10; 
+    //     nextQuestion(); 
+    // }
+
     // WHEN all questions are answered or the timer reaches 0
     // THEN the game is over
+
     // WHEN the game is over
     // THEN I can save my initials and score
 
-    // Game Buttons
-    // var startButton = 
-    // var QuestionContainer = 
-    // var question
-    // var answerChoices 
-    
- // Countdown Timer
-   
-    var correct = 0;
-    var wrong = 0;
-
-    $("#startTime").on("click", function() {
-        var counter = 90;
-        setInterval(function() {
-            counter--;
-            if (counter >= 0) {
-                span = document.getElementById("count");
-                span.innerHTML = counter;
-            }
-            if (counter === 0) {
-                alert("Quiz(time) is over");
-                clearInterval(counter);
-            }
-        }, 1000);
-        console.log(counter)
-    });
+    // function gameOver() {
+    //     window.location.href="/highscores.html";
+    // }
 
 
 
-
-// });
+});

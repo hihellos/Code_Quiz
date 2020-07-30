@@ -8,10 +8,14 @@
 
 }
 
-.btn, .welcome-text {
+.welcome-text {
     font-family: 'Lato', sans-serif;
 }
 
-.hide {
-    display: none;
+.answer-button {
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    font-kerning: 2px;
+    padding: 7px;
+    margin: 9px;
 }
