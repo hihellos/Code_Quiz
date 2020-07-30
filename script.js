@@ -90,15 +90,36 @@ $(document).ready(function() {
     function showQuestion() {
         $("#question-box").html(gameQuestions[0].question)
 
-        for (i = 0; i < gameQuestions[0].choices.length; i++) {
-            var answerBtn = $("<button>");
+        questions.forEach(function (question, index) {
+            // creat div that holds quesitons
+            // add quesitons to div
+            // shuffle questions in array quesiton.choices = question.choices.sort 
+            question.choices = question.choices.sort(function () {
+                return .5 - Math.random();
+
+                for (i = 0; i < gameQuestions[0].choices.length; i++) {
+                    var answerBtn = $("<button>");
+                    
+                    answerBtn.addClass("answer-buttons");
+                    answerBtn.attr("data-answer", gameQuestions[0].choices[i]);
+                    answerBtn.text(gameQuestions[0].choices[i]);
+                    $("#answer-buttons").append(answerBtn);
+                };        
+
+            });
+        });
+
+
+    };
+
+    $("").on("click", function () {
+        var xxx = this.attribute
+        // set a variable for each button, so we can give it an attr then get value out of button clicked, match value with user answer to see if right or wrong
+
+        $("").on("click", fucntion () {
             
-            answerBtn.addClass("answer-buttons");
-            answerBtn.attr("data-answer", gameQuestions[0].choices[i]);
-            answerBtn.text(gameQuestions[0].choices[i]);
-            $("#answer-buttons").append(answerBtn);
-        };
-    }
+        })
+    })
 
     $("#start-time").on("click", function() {
         alert("I hope you like F*R*I*E*N*D*S!")
@@ -141,6 +162,13 @@ $(document).ready(function() {
         gameOver();
     }
 
+    // var scoreArray = [];
+
+    // function logHighschore () {
+    //     $(#highscore-box).html(score)
+
+    //     for (i = 0; i < )
+    // }
 
 
     // WHEN the game is over
