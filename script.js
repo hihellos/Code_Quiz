@@ -93,15 +93,16 @@ $(document).ready(function() {
         for (i = 0; i < gameQuestions[0].choices.length; i++) {
             var answerBtn = $("<button>");
             
-            answerBtn.addClass("answer-button");
+            answerBtn.addClass("answer-buttons");
             answerBtn.attr("data-answer", gameQuestions[0].choices[i]);
             answerBtn.text(gameQuestions[0].choices[i]);
             $("#answer-buttons").append(answerBtn);
-            
         };
     }
 
     $("#start-time").on("click", function() {
+        alert("I hope you like F*R*I*E*N*D*S!")
+        
         $("#welcome-container").hide();
         $("#timer-container").show();
         $("#question-container").show();
@@ -110,18 +111,19 @@ $(document).ready(function() {
         showQuestion();
     });
 
-    // WHEN I answer a question
+    // WHEN I answer a question, check answer, if correct +1
     // THEN I am presented with another question
+    
+    var score = 0;
+    var currentQuestion = 0
 
-    // function next() {
-    //     currentQuestion++;
-        
-    //     if (currentQuestion > gameQuestions.length-1) {
-    //         endGame;
-    //     }
+    $("#answer-buttons").on("click", function() {
 
-    //     var
-    // }
+        if (questions[currentQuestion].choices[i] == question[currentQuestion].answer) {
+            score++
+        }
+        console.log(score);
+    });
 
     // WHEN I answer a question incorrectly
     // THEN time is subtracted from the clock
@@ -137,9 +139,12 @@ $(document).ready(function() {
     // WHEN the game is over
     // THEN I can save my initials and score
 
-    // function gameOver() {
-    //     window.location.href="/highscores.html";
-    // }
+
+    function gameOver() {
+        window.location.href="https://hihellos.github.io/Code_Quiz/highscores.html";
+
+        // if new score is greater than 0, show input for initials and score, else hide
+    };
 
 
 

@@ -3,7 +3,7 @@
 
 }
 
-#question, #welcome {
+#question, #welcome, h1 {
     font-family: 'Libre Baskerville', serif;
 
 }
@@ -12,10 +12,9 @@
     font-family: 'Lato', sans-serif;
 }
 
-.answer-button {
+.answer-buttons {
     font-family: 'Lato', sans-serif;
     font-weight: 800;
-    font-kerning: 2px;
     padding: 7px;
     margin: 9px;
 }
